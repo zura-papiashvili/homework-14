@@ -1,4 +1,179 @@
+@use "colors" as clr;
+@use "mixins" as *;
+
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background-color: clr.$bg-dark;
+    color: clr.$fg-dark;
+    margin: 0;
+}
+
+.container {
+    max-width: 680px;
+    margin: auto;
+    background-color: clr.$bg-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    padding: 10px;
+
+    .theme-switcher {
+        width: 48px;
+        height: 48px;
+    }
+
+    .profile {
+        .yellow-circle {
+            background-color: clr.$bg-dark-accent;
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 107px;
+                height: 107px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: clr.$bg-dark 5px solid;
+            }
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        .name {
+            font-size: 32px;
+            font-weight: 500;
+            color: clr.$fg-dark-lightest;
+        }
+
+        .job {
+            font-size: 14px;
+            font-weight: 400;
+            color: clr.$fg-dark-light;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 26px;
+
+            a {
+                text-decoration: none;
+                color: clr.$fg-dark;
+            }
+        }
+
+
+
+    }
+
+    .exp {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin: 20px;
+
+        .exp-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 66px;
+            min-width: 110px;
+
+
+            h2 {
+                all: unset;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+                color: clr.$fg-dark-lightest;
+            }
+
+            p {
+                all: unset;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 21px;
+                color: clr.$fg-dark-light;
+                text-align: center;
+            }
+
+
+        }
+
+    }
+
+    .profile-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        gap: 2rem;
+        width: 80%;
+
+        .btn-yellow {
+            @include button($bg-color: clr.$bg-dark-accent,
+                $fg-color: clr.$bg-dark);
+
+        }
+
+        .btn-grey {
+            @include button($bg-color: clr.$btn-bg-dark,
+                $fg-color: clr.$fg-dark-light);
+        }
+    }
+
+    .tabs-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 90%;
+        height: 40px;
+        gap: 10px;
+        padding: 10px;
+
+        background-color: clr.$btn-bg-dark;
+        border-radius: 10px;
+
+        .btn-dark {
+            @include button($bg-color: clr.$bg-dark,
+                $fg-color: clr.$fg-dark-light);
+
+        }
+
+        .btn-grey {
+            @include button($bg-color: clr.$btn-bg-dark,
+                $fg-color: clr.$fg-dark-light);
+        }
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(226px, 1fr));
+        grid-auto-rows: 226px;
+        gap: 2rem 1rem;
+
+        .img {
+            background-color: #7e5959;
+            border-radius: 15px;
+        }
+    }
+
+    .copyright {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        color: clr.$fg-dark-light;
+    }
 }
