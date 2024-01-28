@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "sass scss:styles",
+   "start": "sass --watch scss:styles"
+  },
+  "dependencies": {
+    "sass": "^1.70.0"
+  }
+}
